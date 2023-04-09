@@ -1,0 +1,24 @@
+<div class="text-center">
+  <%= form_with model: blog_post do |form| %>
+    <% if form.object.errors.any? %>
+      <div class="">
+        <% form.object.errors.full_messages.each do |message| %>
+          <%= message %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <div class="">
+      <%= form.label :title %><br>
+      <%= form.text_field :title %>
+    </div>
+
+    <div class="">
+      <%= form.label :body %><br>
+      <%= form.text_area :body %>
+    </div>
+
+      <%= form.button class: 'rounded-full bg-red-100 px-2 text-black' %>
+
+  <% end %>
+</div>

@@ -1,0 +1,11 @@
+<div class="text-center">
+  <h1><%= @blog_post.title %></h1>
+  <p class='text-xl'><%= @blog_post.body %></p>
+</div>
+
+<div class='fixed top-0 left-100 right-10'>
+  <% if user_signed_in? %>
+    <%= link_to 'Edit', edit_blog_post_path(@blog_post), class: "rounded-full bg-red-200 px-2 no-underline " %>
+  <% end %>
+  <%= link_to 'back', root_path, class: "rounded-full no-underline bg-red-200 px-2" %>
+</div>
