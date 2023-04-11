@@ -16,11 +16,12 @@
     <p class="alert"><%= alert %></p>
 
   <br>
-  <div class="fixed top-0 left-10 right-0">
+  <div class="fixed top-0 left-10 right-10">
     <% if user_signed_in? %>
       <%= button_to 'Log-out', destroy_user_session_path, method: :delete, class: "rounded-full bg-red-200 px-2 text-black " %>
     <% end %>
   </div>
+
     <%= yield %>
   </body>
 </html>
