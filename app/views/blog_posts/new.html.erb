@@ -1,6 +1,8 @@
-<h1>New Blog Post</h1>
+<div class="text-center">
+  <h1>New Blog Post</h1>
+</div>
 
-<%= render partial: 'form', locals: {blog_post: @blog_post} %>
+  <%= render partial: 'form', locals: {blog_post: @blog_post} %>
 
 <div class='fixed top-0 left-100 right-10'>
   <% if user_signed_in? %>

@@ -1,13 +1,15 @@
-<h1 class='text-center'>My blog</h1>
-
 <% if user_signed_in? %>
   <div class='fixed top-0 left-100 right-10'>
-    <%= link_to 'New blog', new_blog_post_path, class: "rounded-full bg-red-200 px-2 no-underline" %>
+     <button class="rounded-full ..."><%= link_to 'New blog', new_blog_post_path, class: "rounded-full bg-red-200 px-2 no-underline" %></button>
   </div>
 <% end %>
 
-<% @blog_posts.each do |blog_post|%>
-  <div class='bg-red-100'>
-    <h2 class='text-center'><%= link_to blog_post.title, blog_post, class: 'no-underline' %></h2>
-  </div>
-<% end %>
+<div class="text-center">
+  <h1>My blog</h1>
+
+  <% @blog_posts.each do |blog_post|%>
+    <div class='bg-red-100'>
+      <h2><%= link_to blog_post.title, blog_post, class: 'no-underline' %></h2>
+    </div>
+  <% end %>
+</div>
