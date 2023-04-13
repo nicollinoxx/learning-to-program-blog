@@ -7,7 +7,7 @@
 <div class="text-center">
   <h1>My blog</h1>
 
-  <% @blog_posts.reverse.each do |blog_post|%>
+  <% @blog_posts.each do |blog_post|%>
     <div class='bg-red-100'>
       <h2><%= link_to blog_post.title, blog_post, class: 'no-underline' %></h2>
     </div>
