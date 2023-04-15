@@ -18,6 +18,11 @@
       <%= form.text_area :body %>
     </div>
 
+    <div class="">
+      <%= form.label :published_at %><br>
+      <%= form.datetime_select :published_at %>
+    </div>
+
       <%= form.button class: 'rounded-full bg-red-100 px-2 text-black' %>
 
   <% end %>
