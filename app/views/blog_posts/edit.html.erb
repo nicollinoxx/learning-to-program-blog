@@ -7,7 +7,6 @@
 <div class='fixed top-0 left-100 right-10'>
   <%= link_to 'back', @blog_post, class: "rounded-full bg-red-200 px-2 no-underline" %>
 </div>
-<br>
-<div class='text-center'>
+<div class='text-center p-2'>
   <%= button_to 'Delete', @blog_post, method: :delete, data: {turbo_confirm: 'Are you sure'}, class: 'rounded-full bg-red-100 px-2 text-black' %>
 </div>

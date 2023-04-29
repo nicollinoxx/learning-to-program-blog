@@ -1,26 +1,38 @@
 <div class="text-center">
   <%= form_with model: blog_post do |form| %>
     <% if form.object.errors.any? %>
-      <div class="">
+      <div>
         <% form.object.errors.full_messages.each do |message| %>
           <%= message %>
         <% end %>
       </div>
     <% end %>
 
-    <div class="">
+    <div>
       <%= form.label :title %><br>
-      <%= form.text_field :title %>
+      <%= form.text_field :title, class: 'text-center'%>
     </div>
 
-    <div class="">
+    <div class='p-3'>
+      <%= form.label :cover_image %>
+      <% if blog_post.cover_image.present? %>
+      <div id='<%= dom_id(blog_post, :cover_image) %>'>
+        <%= image_tag blog_post.cover_image, class: 'h-40 w-full rounded'%>
+        <%= link_to 'remove cover image', blog_post_cover_image_path(blog_post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'no-underline rounded-full bg-red-100 px-2 text-black' %>
+      </div>
+      <% else %>
+        <%= form.file_field :cover_image %>
+      <% end %>
+    </div>
+
+    <div class='p-3'>
       <%= form.label :content %><br>
       <%= form.rich_text_area :content %>
     </div>
 
-    <div class="">
+    <div class='p-3'>
       <%= form.label :published_at %><br>
-      <%= form.datetime_select :published_at, include_blank: true %>
+      <%= form.datetime_select :published_at, include_blank: true%>
     </div>
 
       <%= form.button class: 'rounded-full bg-red-100 px-2 text-black' %>
